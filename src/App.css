@@ -1,20 +1,42 @@
+.board-wrapper {
+  padding: 20px;
+}
 .score-text {
-  font-size: 40px;
-  font-family: "Times New Roman", Times, serif;
-  float: left;
+  font-size: 28px;
 }
 .table-board{
   float: left;
+  width: 35%;
 }
+.table-board ul{
+  padding: 0;
+  margin: 0;
+}
+.table-board ul li {
+  display: flex;
+}
+
+.table-board ul li p {
+  width: 100%;
+  margin: 3px 0;
+}
+
 .game-over-text{
-  font-size: 40px;
+  font-size: 28px;
   font-family: "Times New Roman", Times, serif;
 }
 .score-board{
   float: right;
+  width: 24%;
+  background: #19a0d9;
+  padding: 7px;
+  text-align: center;
+  color: #fff;
+  min-height: 100px;
+  border-radius: 7px;
 }
 .score-text-game-over {
-  font-size: 40px;
+  font-size: 28px;
   font-family: "Times New Roman", Times, serif;
 }
 .game-over-content
@@ -32,7 +54,6 @@
   font-size: 30px;
   font-weight: bold;
   opacity: 1;
-  float: right;
   animation:score-text-score-decrement-anim infinite 0.5s linear;
 }
 @keyframes score-text-score-decrement-anim {
@@ -42,20 +63,17 @@
 
 
 .button {
-  height:60px;
-  width:60px;
-  margin:2px;
+  width:90%;
   padding-left:0px;
   padding-right:0px;
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+  border: 1px solid black;
 }
 .button-rotate {
-  height:60px;
-  width:60px;
-  margin:2px;
+  width:90%;
   padding-left:0px;
   padding-right:0px;
   text-align: center;
@@ -75,18 +93,14 @@
   transform: scale(1.2);
 }
 .display-value {
-  height:60px;
-  width:60px;
+  width:90%;
   border: 1px solid black;
-  margin:2px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
 }
 .display-value-diamond {
-  height:60px;
-  width:60px;
+  width:90%;
   border: 1px solid black;
-  margin:2px;
   animation: 1s ease-out 0s 1 display-value-diamond-animation;
 }
 @keyframes display-value-diamond-animation {
@@ -107,8 +121,8 @@
   }
 }
 .images {
-  height:60px;
-  width:60px;
+  max-width: 100%;
+  height: auto;
 }
 .right {
   transform: rotate(180deg)

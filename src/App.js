@@ -59,7 +59,7 @@ class App extends Component {
     let rowElements = [];
     for (let i = 0; i < SIZE; i++) {
       rowElements.push(
-        <td key={i + '' + row}>
+        <p key={i + '' + row}>
           <BlockCell
             ref={ref => {
               if (this.refItems.length < SIZE * SIZE)
@@ -73,7 +73,7 @@ class App extends Component {
             }
             decrementCounter={() => this._decrementCounter(row, i)}
           />
-        </td>
+        </p>
       );
     }
     return rowElements;
@@ -81,25 +81,23 @@ class App extends Component {
   _renderRows() {
     let row = [];
     for (let i = 0; i < SIZE; i++) {
-      row.push(<tr key={i}>{this._renderRowElements(i)}</tr>);
+      row.push(<li key={i}>{this._renderRowElements(i)}</li>);
     }
     return row;
   }
   _renderBoard() {
     return (
-      <div>
-        <table className="table-board">
-          <tbody>{this._renderRows()}</tbody>
-        </table>
+      <div className="board-wrapper">
+        <div className="table-board">
+          <ul>{this._renderRows()}</ul>
+        </div>
         <div className="score-board">
           <p className="score-text">
             Your highScore: {localStorage.getItem('highScore') || 0}
           </p>
-          <br />
           <p className="score-text">
             Diamonds Left: {this.dimePos.length}
           </p>
-          <br />
           <p className="score-text">Your score: {this.state.score}</p>
           <p
             hidden={true}

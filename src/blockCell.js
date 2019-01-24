@@ -25,8 +25,8 @@ export default class TableItem extends Component {
                         background:
                             (this.props.row % 2 === 0 && this.props.col % 2 === 1) ||
                                 (this.props.row % 2 === 1 && this.props.col % 2 === 0)
-                                ? '#cc9966'
-                                : '#ffbf00'
+                                ? '#cc8869'
+                                : '#ffcf94'
                     }}
                     onClick={() => {
                         document.getElementById(
