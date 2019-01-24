@@ -1,32 +1,122 @@
-.App {
+.score-text {
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+  float: left;
+}
+.table-board{
+  float: left;
+}
+.game-over-text{
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+}
+.score-board{
+  float: right;
+}
+.score-text-game-over {
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+}
+.game-over-content
+{
   text-align: center;
+  animation: game-over-content-highlight infinite 5s linear;
+}
+@keyframes game-over-content-highlight {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+.score-text-score-decrement{
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 1;
+  float: right;
+  animation:score-text-score-decrement-anim infinite 0.5s linear;
+}
+@keyframes score-text-score-decrement-anim {
+  0% { transform: translateY(0px);opacity: 1; }
+  100% { transform: translateY(100px);opacity: 0; }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.button {
+  height:60px;
+  width:60px;
+  margin:2px;
+  padding-left:0px;
+  padding-right:0px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.button-rotate {
+  height:60px;
+  width:60px;
+  margin:2px;
+  padding-left:0px;
+  padding-right:0px;
+  text-align: center;
+  animation: 1s ease-out 0s 1 button-rotate-animation;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes button-rotate-animation{
+  0% {
+    transform:  rotateY(0deg);
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform:  rotateY(180deg);
+    opacity: 0;
   }
 }
+.button:hover {
+  transform: scale(1.2);
+}
+.display-value {
+  height:60px;
+  width:60px;
+  border: 1px solid black;
+  margin:2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.display-value-diamond {
+  height:60px;
+  width:60px;
+  border: 1px solid black;
+  margin:2px;
+  animation: 1s ease-out 0s 1 display-value-diamond-animation;
+}
+@keyframes display-value-diamond-animation {
+  0% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(15deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-15deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+.images {
+  height:60px;
+  width:60px;
+}
+.right {
+  transform: rotate(180deg)
+}
+.down {
+  transform: rotate(90deg)
+}
+.up {
+  transform: rotate(270deg)
+}
+
